@@ -11,5 +11,5 @@ public class DoctorserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DoctorserviceApplication.class, args);
 	}
-
+//cd A:\doctor_appointment_system_june\doctorservice\doctorservicegit status
 }

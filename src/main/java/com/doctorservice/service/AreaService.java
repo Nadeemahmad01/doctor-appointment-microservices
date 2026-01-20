@@ -65,4 +65,31 @@ public class AreaService {
 
         return dto;
     }
+
+    public AreaResponseDto updateArea(Long id, AreaRequestDto dto) {
+
+        // 1️⃣ Find existing area
+        Area area = areaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Area not found"));
+
+        // 2️⃣ Update fields
+        area.setName(dto.getName());
+
+        // 3️⃣ Save updated entity
+        Area updatedArea = areaRepository.save(area);
+
+        // 4️⃣ Convert to response DTO
+        AreaResponseDto response = new AreaResponseDto();
+        response.setId(updatedArea.getId());
+        response.setName(updatedArea.getName());
+
+        return response;
+    }
+
+
+    public void deleteArea(Long id) {
+
+        Area area=areaRepository.findById(id).orElseThrow(()->new RuntimeException("Area not found"));
+        areaRepository.delete(area);
+    }
 }

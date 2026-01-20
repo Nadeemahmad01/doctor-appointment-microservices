@@ -1,10 +1,8 @@
 package com.doctorservice.dto;
 
-
-public class AreaRequestDto {
+public class CityRequestDto {
 
     private String name;
-    private Long cityId;
 
     public String getName() {
         return name;

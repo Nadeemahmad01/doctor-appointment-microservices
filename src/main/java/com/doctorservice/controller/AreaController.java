@@ -36,4 +36,19 @@ public class AreaController {
     public AreaResponseDto getAreaById(@PathVariable Long id) {
         return areaService.getAreaById(id);
     }
+
+    @PutMapping("/{id}")
+    public AreaResponseDto updateArea(
+            @PathVariable Long id,
+            @RequestBody AreaRequestDto dto) {
+
+        return areaService.updateArea(id, dto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteArea(@PathVariable Long id){
+        areaService.deleteArea(id);
+
+    }
+
 }
